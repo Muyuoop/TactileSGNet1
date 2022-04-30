@@ -70,7 +70,7 @@ def lr_scheduler(optimizer, epoch, init_lr = 0.01, lr_decay_epoch=30):
 
 
 # Tactile dataset
-data_path = 'Ev-Objects/'
+data_path = 'Ev-Containers/'
 trainDataset = tactileDataset(data_path, train=True)
 testDataset = tactileDataset(data_path, train=False)
 
@@ -152,6 +152,6 @@ dateStr = date.today().strftime("%Y%m%d")
 
 if not os.path.isdir('log_data'):
    os.mkdir('log_data')
-torch.save(state, './log_data/' + dateStr + model_name + '_objects_' +  str(num_classes) + '_k_' + str(k)  + '.t7')
+torch.save(state, './log_data/' + dateStr + model_name + '_containers_' +  str(num_classes) + '_k_' + str(k)  + '.t7')
 print('Avg acc: %f, std: %f: ' % (torch.mean(state['best_acc']), torch.std(state['best_acc'])))
 
